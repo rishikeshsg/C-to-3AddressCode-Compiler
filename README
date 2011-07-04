@@ -1,0 +1,9 @@
+Compiler for a subset of C written with Flex and Bison in the context of a compiler construction course at DHBW / Germany. After the compilation, the program takes C-code on the stdin and produces three-address-code in the quadcode.out file. See input.c for an example of the C-subset the compiler can cope with.
+
+Involved in development:
+David Hildenbrand
+Jeffrey Jedele
+Thilo Michael
+Manuel Wimmer
+Tobias Schoknecht
+Ramin Safarpour

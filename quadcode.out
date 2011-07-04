@@ -1,0 +1,76 @@
+SYMBOLS
+-------------
+Name            Type    Int_Typ    Offset/Size    Line    Index1    Index2    Parent          Parameter
+-------------------------------------------------------------------------------------------------------
+questionmark    Func    Real       24             28      0         0         None            2
+x               Int     None       0              0       0         0         questionmark    1
+y               Int     None       4              0       0         0         questionmark    2
+variable_1      Int     None       0              0       0         0         main            0
+variable_2      Int     None       4              0       0         0         main            0
+variable_3      Real    None       8              0       0         0         main            0
+f_1             Real    None       16             0       0         0         main            0
+f_2             Real    None       24             0       0         0         main            0
+i_1             Int     None       32             0       0         0         main            0
+i_2             Int     None       36             0       0         0         main            0
+main            Main    Int        40             0       0         0         None            0
+result          Real    None       8              0       0         0         questionmark    0
+i_3             Int     None       16             0       0         0         questionmark    0
+i_4             Int     None       20             0       0         0         questionmark    0
+
+
+CODE
+----
+
+0    GOTO 1
+1    variable_1 := 1
+2    variable_2 := 2
+3    f_1 := -3.0
+4    variable_3 := f_1
+5    IF (variable_1 <= 10) GOTO 7
+6    GOTO 23
+7    IF (1 <> 0) GOTO 9
+8    GOTO 23
+9    PARAM variable_1
+10   PARAM variable_2
+11   f_2 := CALL questionmark, 2
+12   variable_3 := f_2
+13   variable_1 := variable_1 + 1
+14   variable_2 := variable_1
+15   i_1 := 2
+16   i_2 := variable_2
+17   IF (i_1 <= 0) GOTO 21
+18   i_2 := i_2 * 2
+19   i_1 := i_1 - 1
+20   GOTO 17
+21   variable_2 := i_2
+22   GOTO 5
+23   IF (variable_3 <> 0) GOTO 27
+24   GOTO 25
+25   RETURN 0
+26   GOTO 28
+27   RETURN 1
+28   i_3 := y / x
+29   result := 1.0
+30   y := y - 1
+31   IF (y < x) GOTO 28
+32   GOTO 33
+33   IF (0 <> 0) GOTO 28
+34   GOTO 35
+35   x := 0
+36   IF (x < 10) GOTO 40
+37   GOTO 43
+38   x := x + 1
+39   GOTO 36
+40   y := x
+41   y := y + 1
+42   GOTO 38
+43   IF (x <= y) GOTO 45
+44   GOTO 48
+45   i_4 := x + 1
+46   IF (i_4 > y) GOTO 50
+47   GOTO 48
+48   IF (x = y) GOTO 50
+49   GOTO 52
+50   RETURN 1
+51   GOTO 53
+52   RETURN 0
