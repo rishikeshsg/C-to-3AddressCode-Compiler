@@ -674,6 +674,7 @@ int getFunctionType(char *name){
 		if((cur->type == ST_FUNC || cur->type == ST_PROTO) && 0 == strcmp(name,cur->name)){
 			return cur->internalType;
 		}
+        cur = cur->next;
 	}
 
 	return 0;
@@ -708,6 +709,7 @@ int checkAndGenerateParams(SymbolTableEntry* queue, char* name ,int parameterCou
 		if((cur->type == ST_FUNC || cur->type == ST_PROTO) && 0 == strcmp(name,cur->name)){
 			break;
 		}
+        cur = cur->next;
 	}
 	//found?
 	if(cur == NULL)
